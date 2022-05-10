@@ -1,5 +1,7 @@
 #!/bin/sh
 
+python -m SimpleHTTPServer $PORT &
+
 while true; do
   redis-cli -u $REDIS_URL set tstamp "$(date)"
   sleep 2
