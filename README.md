@@ -22,6 +22,13 @@ redis-server:6379> get name
 "david"
 ```
 
+## Run a pinger
+
+```
+docker build -t redis-pinger .
+docker run --rm --name redis-pinger --network redis-net -e REDIS_URL=redis://redis-server -it redis-pinger
+```
+
 ## Cleanup
 
 ```
